@@ -1,203 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STYLETOFITBYBIBI | Pink Luxury Fashion</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Unna:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;700;900&display=swap');
-        
-        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
-        .brand-font { font-family: 'Unna', serif; }
-        
-        .pink-bg { background-color: #FF2D78; }
-        .pink-bg-soft { background-color: #FFF0F5; }
-        .text-pink { color: #FF2D78; }
-        .border-pink { border-color: #FF2D78; }
-        .bg-dark { background-color: #121212; }
-        
-        .whatsapp-pulse {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 45, 120, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 45, 120, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 45, 120, 0); }
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STYLETOFITBYBIBI</title>
 
-        /* Floating Buttons */
-        .floating-btns {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000;
-        }
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        .floating-btns a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+<style>
+body { font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; background-color:#fff; }
 
-        .floating-btns a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        }
+/* Hero background with pink accent overlay */
+.hero {
+    background: linear-gradient(rgba(255,45,120,0.45), rgba(255,45,120,0.45)),
+    url('https://i.postimg.cc/D0S7XfQW/images-(2).jpg') center/cover no-repeat;
+}
 
-        .btn-dm { background-color: #25D366; } /* WhatsApp */
-        .btn-tiktok { background-color: #010101; } /* TikTok Black */
-        .btn-email { background-color: #FF2D78; } /* Pink */
+/* Gallery hover effect */
+.gallery img {
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.gallery img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
-        /* Developer Credit */
-        .dev-credit {
-            position: fixed;
-            bottom: 5px;
-            right: 5px;
-            font-size: 8px;
-            color: rgba(0,0,0,0.5);
-            z-index: 1001;
-            pointer-events: none; /* so it doesn’t interfere */
-        }
-    </style>
+/* Floating buttons */
+.floating-btns {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.floating-btns a {
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.floating-btns a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn-dm { background:#25D366; }
+.btn-tiktok { background:#010101; }
+.btn-email { background:#FF2D78; }
+
+/* Developer credit */
+.dev-credit{
+    position: fixed;
+    bottom: 6px;
+    right: 8px;
+    font-size: 10px;
+    color: rgba(0,0,0,0.45);
+}
+</style>
 </head>
-<body class="bg-white text-gray-900">
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-50 bg-white border-b-4 border-pink px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-3xl md:text-5xl font-black tracking-tighter brand-font italic uppercase">
-                STYLETOFIT<span class="text-pink">BYBIBI</span>
-            </div>
-            <div class="hidden md:flex space-x-6 font-bold text-xs uppercase tracking-[0.2em]">
-                <a href="#about" class="hover:text-pink transition">About</a>
-                <a href="#gallery" class="hover:text-pink transition">Work</a>
-                <a href="#contact" class="text-pink">Contact</a>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <header class="relative bg-dark overflow-hidden flex items-center min-h-[70vh]">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center px-6 py-12 gap-10">
-            <div class="w-full md:w-1/2 text-white z-10">
-                <div class="pink-bg inline-block px-4 py-1 mb-6 text-xs font-bold uppercase tracking-widest">
-                    Awka's Finest Bespoke Tailor
-                </div>
-                <h1 class="text-6xl md:text-8xl font-black leading-none mb-6">
-                    WE MAKE <br> <span class="text-pink">CLOTHES</span> <br> THAT SUIT YOU.
-                </h1>
-                <p class="text-gray-400 text-lg mb-10 max-w-md border-l-4 border-pink pl-4 leading-relaxed">
-                    At Styletofitbybibi, fashion is more than clothing—it's a statement. Every piece is crafted with passion for the modern woman.
-                </p>
-                
-                <a href="https://wa.me/2348144163490" class="whatsapp-pulse inline-flex items-center pink-bg text-white px-10 py-5 rounded-full font-black text-lg uppercase tracking-widest hover:brightness-110 transition shadow-2xl">
-                    <i class="fab fa-whatsapp mr-3 text-2xl"></i> Book A Fitting
-                </a>
-            </div>
-            
-            <div class="w-full md:w-1/2 relative">
-                <div class="absolute -top-10 -right-10 w-72 h-72 pink-bg rounded-full blur-[120px] opacity-30"></div>
-                <img src="https://i.postimg.cc/mZKPyKcW/images-(1).jpg" 
-                     alt="Asoebi Style" 
-                     class="relative z-10 rounded-3xl shadow-2xl border-b-8 border-pink">
-            </div>
-        </div>
-    </header>
+<!-- Navbar -->
+<nav class="bg-white shadow-md px-8 py-5 flex justify-between items-center border-b-4 border-pink-500">
+    <h1 class="text-3xl font-bold tracking-wide">
+        STYLETOFIT<span class="text-pink-500">BYBIBI</span>
+    </h1>
+</nav>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 pink-bg-soft">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl md:text-6xl font-black mb-8 brand-font">Welcome to Styletofitbybibi</h2>
-            <div class="w-24 h-2 pink-bg mx-auto mb-10"></div>
-            <p class="text-xl text-gray-700 leading-relaxed font-medium">
-                Whether you're looking for <span class="text-pink">Elegant Evening Wear</span>, <span class="font-bold">Native Asoebi</span>, or <span class="text-pink">Kiddies Wear</span>, we combine artistry and innovation to bring your vision to life.
-            </p>
-        </div>
-    </section>
+<!-- Hero Section -->
+<header class="hero text-white text-center py-32 px-6">
+    <h2 data-aos="fade-up" class="text-5xl md:text-6xl font-bold mb-6">
+        WE MAKE <span class="text-pink-500">CLOTHES</span> THAT SUIT YOU
+    </h2>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 text-center mb-16">
-            <h2 class="text-5xl font-black uppercase tracking-tighter mb-4">The Lookbook</h2>
-            <p class="text-pink font-bold tracking-[0.3em]">NATIVE • ASOEBI • READY-TO-WEAR</p>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <!-- Asoebi -->
-            <div class="relative group cursor-pointer">
-                <div class="overflow-hidden rounded-2xl border-b-4 border-pink">
-                    <img src="https://i.postimg.cc/D0S7XfQW/images-(2).jpg" 
-                         class="w-full h-[350px] object-cover gallery-img" alt="Asoebi Wear">
-                </div>
-                <div class="mt-4 font-black uppercase tracking-widest text-center">Asoebi Glam</div>
-            </div>
-            <!-- Native -->
-            <div class="relative group cursor-pointer">
-                <div class="overflow-hidden rounded-2xl border-b-4 border-pink">
-                    <img src="https://i.postimg.cc/mZKPyKcW/images-(1).jpg" 
-                         class="w-full h-[350px] object-cover gallery-img" alt="Native Wear">
-                </div>
-                <div class="mt-4 font-black uppercase tracking-widest text-center">Native Custom</div>
-            </div>
-            <!-- Kids / Ready-to-Wear -->
-            <div class="relative group cursor-pointer">
-                <div class="overflow-hidden rounded-2xl border-b-4 border-pink">
-                    <img src="https://i.postimg.cc/d0Q30Yf0/images.jpg" 
-                         class="w-full h-[350px] object-cover gallery-img" alt="Kids Wear">
-                </div>
-                <div class="mt-4 font-black uppercase tracking-widest text-center">Kids / Ready-To-Wear</div>
-            </div>
-        </div>
-    </section>
+    <p data-aos="fade-up" data-aos-delay="200"
+       class="max-w-3xl mx-auto text-lg leading-relaxed">
+        At StyleToFitByBibi, we believe fashion is the most powerful form of self-expression.
+        We don’t just sew fabric; we engineer confidence. From the intricate lace of a Bridal masterpiece
+        to the bold geometry of a Native Custom, every piece is a love letter to individuality.
+        Based in the heart of Awka, we combine heritage techniques with tomorrow’s trends
+        to ensure you never just fit in—you stand out.
+    </p>
 
-    <!-- Floating Action Buttons -->
-    <div class="floating-btns">
-        <a href="https://wa.me/2348144163490" class="btn-dm"><i class="fab fa-whatsapp mr-2"></i>Send us a DM</a>
-        <a href="https://www.tiktok.com/@styletofitbybibi" class="btn-tiktok"><i class="fab fa-tiktok mr-2"></i>Follow us on TikTok</a>
-        <a href="mailto:okoyeotito3@gmail.com" class="btn-email"><i class="fas fa-envelope mr-2"></i>Lay a Complaint on Email</a>
+    <a href="https://wa.me/2348144163490"
+       class="inline-block mt-10 bg-pink-500 px-10 py-4 rounded-full font-bold hover:bg-pink-600 transition">
+       Book A Fitting
+    </a>
+</header>
+
+<!-- Gallery Section -->
+<section class="py-20 px-8 gallery">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+    <!-- Asoebi -->
+    <div data-aos="fade-up">
+        <img src="https://i.postimg.cc/D0S7XfQW/images-(2).jpg"
+        class="w-full h-[420px] object-cover rounded-2xl shadow-xl">
     </div>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-white py-20 px-6 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
-            <div>
-                <h4 class="text-4xl font-black brand-font mb-6 italic text-pink">StyleToFit.</h4>
-                <p class="font-bold text-gray-500 mb-2">Abakiliki Street, Awka, Nigeria</p>
-                <p class="text-black font-black uppercase text-sm">Mon - Fri: 9am — 6pm</p>
-            </div>
-            
-            <div class="flex flex-col space-y-4">
-                <p class="text-xs font-black uppercase tracking-widest text-pink">Social Hub</p>
-                <a href="https://www.tiktok.com/@styletofitbybibi" class="text-2xl font-black hover:text-pink transition">TIKTOK</a>
-                <a href="https://wa.me/2348144163490" class="text-2xl font-black text-[#25D366] hover:brightness-90 transition">WHATSAPP</a>
-            </div>
-
-            <div class="bg-pink-bg-soft p-8 rounded-3xl border-2 border-pink border-dashed">
-                <p class="font-black text-pink uppercase text-xs mb-4">Office Info</p>
-                <p class="text-gray-700 font-medium mb-6 leading-relaxed">Visit us at our studio. We are closed on Sat & Sun to prepare for a stylish week ahead.</p>
-                <a href="mailto:okoyeotito3@gmail.com" class="pink-bg text-white px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest shadow-lg">Email Us</a>
-            </div>
-        </div>
-        <div class="text-center mt-20 text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 italic">
-            &copy; 2026 StyleToFitByBibi • Bespoke Excellence
-        </div>
-    </footer>
-
-    <!-- Developer Credit -->
-    <div class="dev-credit">
-        Web design & development by Otitochukwu Okoye | okoyeotito3@gmail.com
+    <!-- Native -->
+    <div data-aos="fade-up" data-aos-delay="150">
+        <img src="https://i.postimg.cc/BvN856F2/5fe8ca4bbe55819305d8843fbd5ab49e.webp"
+        class="w-full h-[420px] object-cover rounded-2xl shadow-xl">
     </div>
+
+    <!-- Kids -->
+    <div data-aos="fade-up" data-aos-delay="300">
+        <img src="https://i.postimg.cc/d0Q30Yf0/images.jpg"
+        class="w-full h-[420px] object-cover rounded-2xl shadow-xl">
+    </div>
+
+</div>
+</section>
+
+<!-- Location & Contact -->
+<section class="bg-gray-100 py-20 px-6 text-center">
+    <h3 class="text-3xl font-bold text-pink-600 mb-6">Visit Our Atelier</h3>
+
+    <p class="mb-4 text-lg font-semibold">
+        📍 Abakaliki Street, Awka, Anambra State, Nigeria
+    </p>
+
+    <p class="mb-4 text-md">
+        🕒 Monday – Friday | 9:00AM – 6:00PM
+    </p>
+
+    <p class="text-md">
+        📧 For complaints: styletofitbybibi@gmail.com
+    </p>
+</section>
+
+<!-- Floating Buttons -->
+<div class="floating-btns">
+    <a href="https://wa.me/2348144163490" class="btn-dm">Send us a DM</a>
+    <a href="https://www.tiktok.com/@styletofitbybibi" class="btn-tiktok">Follow on TikTok</a>
+    <a href="mailto:styletofitbybibi@gmail.com" class="btn-email">Lay a Complaint</a>
+</div>
+
+<!-- Developer Credit -->
+<div class="dev-credit">
+Web design & development by Otitochukwu Okoye | okoyeotito3@gmail.com
+</div>
+
+<script>
+AOS.init({
+    duration: 1000,
+    once: true
+});
+</script>
 
 </body>
 </html>
